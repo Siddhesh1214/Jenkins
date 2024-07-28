@@ -1,0 +1,12 @@
+sudo apt update
+sudo apt install apache2 -y
+sudo apt install unzip -y
+sudo systemctl start apache2
+sudo wget https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.99/bin/apache-tomcat-8.5.99.zip
+sudo unzip apache-tomcat-8.5.99.zip
+git clone https://github.com/Mayur2905/webapp.git
+sudo mv webapp/student.war apache-tomcat-8.5.99/webapp/
+chmod +x apache-tomcat-8.5.99//bin/catalina.sh
+sudo chown -R ubuntu:ubuntu /home/ubuntu/workspace/StudentApp/apache-tomcat-8.5.99
+sudo chmod -R a+w /home/ubuntu/workspace/StudentApp/apache-tomcat-8.5.99/logs
+sudo apache-tomat-8.5.99/bin/catalina.sh start
